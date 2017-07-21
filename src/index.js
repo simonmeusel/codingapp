@@ -16,5 +16,5 @@ function reload () {
   });
 }
 
-setTimeout(reload, 10 * 1000)
+setInterval(reload, 60 * 1000)
 reload()
