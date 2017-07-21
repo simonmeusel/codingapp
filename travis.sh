@@ -2,4 +2,4 @@ node --version
 npm --version
 
 npm install
-npm release
+npm run release
