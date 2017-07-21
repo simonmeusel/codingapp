@@ -1,6 +1,11 @@
 const cheerio = require('cheerio');
 const axios = require('axios');
 const url = 'http://thecodinglove.com/random';
+const settings = require('electron-settings');
+
+function getTime () {
+  return settings.get('time', 30 * 1000)
+}
 
 function reload () {
   axios.get(url)
@@ -14,7 +19,8 @@ function reload () {
     console.log(error);
     reject(error);
   });
+  console.log(getTime())
+  setTimeout(reload, getTime())
 }
 
-setInterval(reload, 60 * 1000)
 reload()
