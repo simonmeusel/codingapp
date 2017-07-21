@@ -4,6 +4,11 @@ os:
 node_js:
  - "8"
 
+
+before_install:
+ - brew update
+ - brew install wine
+
 before_script:
  - chmod +x ./travis.sh
 
