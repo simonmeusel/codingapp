@@ -1,0 +1,19 @@
+os:
+  - osx
+
+node_js:
+ - "8"
+
+before_script:
+ - chmod +x ./travis.sh
+
+script: ./travis.sh
+
+cache:
+  directories:
+    - node_modules
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change

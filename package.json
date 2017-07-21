@@ -1,0 +1,36 @@
+{
+  "name": "codingapp",
+  "version": "0.1.0",
+  "description": "condingapp",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "release": "electron-builder -mwl --publish onTagOrDraft"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonmeusel/codingapp.git"
+  },
+  "build": {
+    "appId": "de.simonmeusel.codingapp"
+  },
+  "author": "Simon Meusel",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "cheerio": "^1.0.0-rc.2"
+  },
+  "devDependencies": {
+    "electron": "^1.6.11",
+    "electron-builder": "^19.16.2"
+  },
+  "build": {
+    "appId": "de.simonmeusel.codingapp",
+    "files": [
+      "src/**/*"
+    ],
+    "publish": null
+  }
+}
