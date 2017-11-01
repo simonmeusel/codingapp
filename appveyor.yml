@@ -4,6 +4,7 @@ environment:
 install:
   - ps: Install-Product node $env:nodejs_version
   - npm install
+  - npm install 7zip-bin-win
 
 build_script:
   - node --version
