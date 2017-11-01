@@ -33,5 +33,10 @@
   "devDependencies": {
     "electron": "^1.6.11",
     "electron-builder": "^19.16.2"
-  }
+  },
+  "platformSpecificDependencies": [
+    [
+      "7zip-bin-win"
+    ]
+  ]
 }
