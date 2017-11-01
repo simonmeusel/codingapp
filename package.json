@@ -1,14 +1,14 @@
 {
   "name": "codingapp",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "condingapp",
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "try": "electron-builder --publish onTagOrDraft",
-    "release": "electron-builder -ml --publish onTagOrDraft"
+    "releaseml": "electron-builder -ml --publish onTagOrDraft",
+    "releasew": "electron-builder -w --publish onTagOrDraft"
   },
   "repository": {
     "type": "git",

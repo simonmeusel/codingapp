@@ -6,15 +6,15 @@ language: node_js
 node_js:
  - "8"
 
-
 before_install:
  - brew update
  - brew install wine
 
-before_script:
- - chmod +x ./travis.sh
-
-script: ./travis.sh
+script:
+  - node --version
+  - npm --version
+  - npm install
+  - npm run releaseml
 
 cache:
   directories:
