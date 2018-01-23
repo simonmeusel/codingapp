@@ -26,12 +26,12 @@
   "author": "Simon Meusel",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.17.1",
     "cheerio": "^1.0.0-rc.2",
-    "electron-settings": "^3.1.1"
+    "electron-settings": "^3.1.4"
   },
   "devDependencies": {
-    "electron": "^1.6.11",
-    "electron-builder": "^19.16.2"
+    "electron": "^1.8.1",
+    "electron-builder": "^19.55.1"
   }
 }
