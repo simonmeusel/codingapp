@@ -1,24 +1,27 @@
 const cheerio = require('cheerio');
 const axios = require('axios');
-const url = 'http://thecodinglove.com/random';
+const initialUrl = 'https://thecodinglove.com/postponing-the-deadline';
 const settings = require('electron-settings');
 
-function getTime () {
+let nextUrl = initialUrl;
+
+function getTime() {
   return settings.get('time', 30 * 1000)
 }
 
-function reload () {
-  axios.get(url)
-  .then((response) => {
-    const $ = cheerio.load(response.data);
-    document.querySelector('#image').src = $('.post img').attr('src');
-    document.querySelector('#text').innerHTML = new Option($('.post h3').text()).innerHTML;
-    document.querySelector('#author').innerHTML = new Option($('.post i').text()).innerHTML;
-  })
-  .catch((error) => {
-    console.log(error);
-    reject(error);
-  });
+function reload() {
+  axios.get(nextUrl)
+    .then((response) => {
+      const $ = cheerio.load(response.data);
+      document.querySelector('#image').src = $('.blog-post-content img').attr('src');
+      document.querySelector('#text').innerHTML = new Option($('.blog-post-title').text()).innerHTML;
+      document.querySelector('#author').innerHTML = new Option($('.post-meta-info b').text()).innerHTML;
+      nextUrl = $('i.fa-random').parent().attr('href');
+    })
+    .catch((error) => {
+      console.log(error);
+      reject(error);
+    });
   console.log(getTime())
   setTimeout(reload, getTime())
 }
