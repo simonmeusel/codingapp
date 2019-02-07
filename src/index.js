@@ -13,7 +13,13 @@ function reload() {
   axios.get(nextUrl)
     .then((response) => {
       const $ = cheerio.load(response.data);
-      document.querySelector('#image').src = $('.blog-post-content img').attr('src');
+    
+      let image = $('.blog-post-content object').attr('data');
+      if (!image) {
+        image = $('.blog-post-content img').attr('src');
+      }
+    
+      document.querySelector('#image').src = image;
       document.querySelector('#text').innerHTML = new Option($('.blog-post-title').text()).innerHTML;
       document.querySelector('#author').innerHTML = new Option($('.post-meta-info b').text()).innerHTML;
       nextUrl = $('i.fa-random').parent().attr('href');
