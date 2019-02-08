@@ -1,4 +1,3 @@
 # codingapp
-codingapp
 
-A simple electron app
+Inofficial desktop app for [The Coding Love](https://thecodinglove.com/)
